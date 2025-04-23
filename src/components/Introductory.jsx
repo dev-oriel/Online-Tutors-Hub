@@ -14,7 +14,7 @@ const Introductory = () => {
           </p>
         </div>
 
-        <div className="space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
+        <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
           <p>
             Balancing coursework, work commitments, and personal life can feel
             overwhelming. That’s why OnlineTutorsHub is here — to provide

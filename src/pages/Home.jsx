@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import FeaturesSection from "../components/FeaturesSection";
 import Introductory from "../components/Introductory.jsx";
-import Trusted from "../components/Trusted.jsx"
+import Trusted from "../components/Trusted.jsx";
 import TestimonialsSection from "../components/TestimonialsSection.jsx";
 
 const Home = () => {
@@ -13,8 +13,8 @@ const Home = () => {
       <AboutSection />
       <FeaturesSection />
       <Introductory />
-      <Trusted />
       <TestimonialsSection />
+      <Trusted />
     </div>
   );
 };
