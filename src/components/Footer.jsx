@@ -103,30 +103,31 @@ const Footer = () => {
             Connect With Us
           </h3>
           <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
-            <Mail className="w-4 h-4" /> support@Smartwavetutorshub.com
+            <Mail className="w-4 h-4 text-[#ffd816]" />{" "}
+            support@Smartwavetutorshub.com
           </p>
           <div className="flex space-x-4 mt-2">
             <a
               href="#"
-              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-[#1877F2] hover:text-[#ffd816 no-underline transition-colors duration-200"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-[#1DA1F2] hover:text-[#ffd816] no-underline transition-colors duration-200"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-[#E1306C] hover:text-[#ffd816] no-underline transition-colors duration-200"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-[#0A66C2] hover:text-[#ffd816] no-underline transition-colors duration-200"
             >
               <Linkedin className="w-5 h-5" />
             </a>
