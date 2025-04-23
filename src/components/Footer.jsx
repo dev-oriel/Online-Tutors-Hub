@@ -109,7 +109,7 @@ const Footer = () => {
           <div className="flex space-x-4 mt-2">
             <a
               href="#"
-              className="text-[#1877F2] hover:text-[#ffd816 no-underline transition-colors duration-200"
+              className="text-[#1877F2] hover:text-[#ffd816] no-underline transition-colors duration-200"
             >
               <Facebook className="w-5 h-5" />
             </a>
