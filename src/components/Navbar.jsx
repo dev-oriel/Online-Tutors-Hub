@@ -2,13 +2,14 @@ import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/icons/Smartwave Tutors Hub.png";
-import { desktopMenus, mobileLinks } from "../constants";
+import { desktopMenus } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const timeoutRef = useRef(null);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,6 +17,17 @@ const Navbar = () => {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setDropdown(null);
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleMouseEnter = (key) => {
@@ -38,25 +50,30 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md fixed w-full h-20 top-0 z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center w-full justify-between">
+    <nav
+      ref={navRef}
+      className="bg-white shadow-md fixed w-full h-20 top-0 z-50 border-b border-gray-200"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between w-full">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-3">
-          <img
-            src={logo}
-            alt="Smartwave Tutors Hub Logo"
-            className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 hover:scale-105"
-          />
-          <span className="text-lg sm:text-2xl font-extrabold tracking-wide text-[#0c5192] leading-tight">
-            Smartwave
-            <span className="block text-base sm:text-xl font-semibold text-[#ffd816] -mt-1 tracking-tight">
-              Tutors Hub
+        <div className="flex-none">
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src={logo}
+              alt="Smartwave Tutors Hub Logo"
+              className="h-12 sm:h-14 w-auto object-contain transition-all duration-300 hover:scale-105"
+            />
+            <span className="text-xl sm:text-2xl font-extrabold tracking-wide text-[#0c5192]">
+              Smartwave
+              <span className="block text-xl font-semibold text-[#ffd816] -mt-1 tracking-tight">
+                Tutors Hub
+              </span>
             </span>
-          </span>
-        </Link>
+          </Link>
+        </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 font-medium flex-1 justify-center">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex flex-1 justify-center items-center space-x-6 font-medium">
           {desktopMenus.map((menu) => (
             <div
               key={menu.key}
@@ -69,8 +86,8 @@ const Navbar = () => {
               </button>
 
               {dropdown === menu.key && (
-                <div className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-white shadow-xl border border-gray-200 z-50 w-[800px] max-w-[95vw] p-6 rounded-lg">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white shadow-xl border border-gray-200 z-50 w-[1100px] p-8 rounded-lg">
+                  <div className="grid grid-cols-4 gap-6">
                     {menu.links.map((link, idx) => (
                       <Link
                         key={idx}
@@ -87,22 +104,25 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
+        {/* Mobile Hamburger Toggle */}
+        <div className="flex md:hidden">
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-[#0c5192] focus:outline-none"
+            onClick={() => {
+              setIsOpen(!isOpen);
+              setDropdown(null);
+            }}
+            className="text-[#0c5192] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffd816] transition duration-200"
           >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md py-4 px-6 z-40">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md py-4 flex flex-col items-center space-y-4 z-40">
           {desktopMenus.map((menu) => (
-            <div key={menu.key} className="mb-3">
+            <div key={menu.key} className="w-full px-4">
               <button
                 onClick={() => handleDropdownClick(menu.key)}
                 className="w-full text-left text-[#0c5192] font-semibold py-2 hover:text-[#ffd816]"
@@ -116,7 +136,10 @@ const Navbar = () => {
                       key={idx}
                       to={link.to}
                       className="text-sm text-gray-700 hover:text-[#ffd816]"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setDropdown(null);
+                      }}
                     >
                       {link.text}
                     </Link>
@@ -124,18 +147,6 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          ))}
-
-          {/* Extra mobile links */}
-          {mobileLinks.map((link, idx) => (
-            <Link
-              key={idx}
-              to={link.to}
-              className="text-[#0c5192] font-semibold block py-2 hover:text-[#ffd816]"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.text}
-            </Link>
           ))}
         </div>
       )}
