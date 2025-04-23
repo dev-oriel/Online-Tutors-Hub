@@ -6,6 +6,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import Introductory from "../components/Introductory.jsx";
 import Trusted from "../components/Trusted.jsx";
 import TestimonialsSection from "../components/TestimonialsSection.jsx";
+import SectionDivider from "../components/SectionDivider.jsx"; // <- Import here
 
 const Home = () => {
   return (
@@ -41,8 +42,11 @@ const Home = () => {
         <HeroSection />
         <AboutSection />
         <FeaturesSection />
+        <SectionDivider />
         <Introductory />
+        <SectionDivider />
         <Trusted />
+        <SectionDivider />
         <TestimonialsSection />
       </div>
     </>

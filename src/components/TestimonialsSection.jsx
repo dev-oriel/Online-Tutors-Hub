@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -32,9 +33,14 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-20">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="text-3xl sm:text-4xl font-bold text-gray-800"
+        >
           What Our Clients Say
-        </h2>
+        </motion.h2>
         <p className="mt-2 text-gray-500">
           Real feedback from learners who’ve trusted Online Tutors Hub with
           their success.
@@ -43,18 +49,21 @@ const TestimonialsSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-gray-50 p-6 rounded-2xl shadow hover:shadow-lg transition duration-300"
+            className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 * index }}
           >
             <div className="flex items-center gap-4 mb-4">
               <img
                 src={testimonial.avatar}
                 alt={testimonial.name}
-                className="w-14 h-14 rounded-full object-cover"
+                className="w-16 h-16 rounded-full object-cover border-2 border-gray-200 shadow-md"
               />
               <div>
-                <h4 className="font-semibold text-gray-800">
+                <h4 className="font-semibold text-gray-800 text-lg">
                   {testimonial.name}
                 </h4>
                 <p className="text-sm text-gray-500">{testimonial.role}</p>
@@ -73,7 +82,7 @@ const TestimonialsSection = () => {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
