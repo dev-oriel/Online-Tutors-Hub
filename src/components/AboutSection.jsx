@@ -88,11 +88,9 @@ const AboutSection = () => {
               we’ve streamlined the process so you can focus on what matters —
               your success.
               <br />
-              <br />
               Just click the <strong>live chat button</strong> on this page to
               connect with one of our friendly support agents. Tell us what you
               need — from deadlines to subjects — and we’ll handle the rest.
-              <br />
               <br />
               After confirming the details, we’ll assign your dedicated tutor
               who matches your academic level and subject. We stay connected
