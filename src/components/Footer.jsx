@@ -1,15 +1,26 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 
+// Import local icons
+import AmericanExpress from "../assets/icons/American-Express.png";
+import Mastercard from "../assets/icons/mastercard.png";
+import PayPal from "../assets/icons/paypal.png";
+import Visa from "../assets/icons/visa-logo.png";
+
+const paymentIcons = [
+  { name: "PayPal", src: PayPal },
+  { name: "Mastercard", src: Mastercard },
+  { name: "Visa", src: Visa },
+  { name: "American Express", src: AmericanExpress },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white px-6 pt-16 pb-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Smartwave Tutors Hub
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Smartwave Tutors Hub</h2>
           <p className="text-gray-400 text-sm leading-relaxed">
             Personalized academic support that delivers results — anywhere,
             anytime. Join thousands of students excelling with Smartwave Tutors
@@ -17,118 +28,74 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Payment Security */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
+          <h3 className="text-lg font-semibold text-white mb-3">
+            100% Safe & Secure Payments
+          </h3>
+          <p className="text-gray-400 text-sm mb-4">
+            We ensure your payment info is encrypted & processed securely.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            {paymentIcons.map((method, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-2 rounded shadow-md w-20 h-10 flex items-center justify-center"
               >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                Contact
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                FAQs
-              </a>
-            </li>
-          </ul>
+                <img
+                  src={method.src}
+                  alt={method.name}
+                  className="h-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Academic Help */}
+        {/* Services */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">
             Our Services
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                Online Class Help
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                Exam Assistance
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                Assignment Help
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
-              >
-                Essay Writing
-              </a>
-            </li>
+            {[
+              "Online Class Help",
+              "Exam Assistance",
+              "Assignment Help",
+              "Essay Writing",
+            ].map((item, index) => (
+              <li key={index}>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Contact + Social */}
+        {/* Contact & Social */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">
             Connect With Us
           </h3>
           <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
-            <Mail className="w-4 h-4 text-[#ffd816]" />{" "}
+            <Mail className="w-4 h-4 text-[#ffd816]" />
             support@Smartwavetutorshub.com
           </p>
           <div className="flex space-x-4 mt-2">
-            <a
-              href="#"
-              className="text-[#1877F2] hover:text-[#ffd816] no-underline transition-colors duration-200"
-            >
+            <a href="#" className="text-[#1877F2] hover:text-[#ffd816]">
               <Facebook className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-[#1DA1F2] hover:text-[#ffd816] no-underline transition-colors duration-200"
-            >
+            <a href="#" className="text-[#1DA1F2] hover:text-[#ffd816]">
               <Twitter className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-[#E1306C] hover:text-[#ffd816] no-underline transition-colors duration-200"
-            >
+            <a href="#" className="text-[#E1306C] hover:text-[#ffd816]">
               <Instagram className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-[#0A66C2] hover:text-[#ffd816] no-underline transition-colors duration-200"
-            >
+            <a href="#" className="text-[#0A66C2] hover:text-[#ffd816]">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>

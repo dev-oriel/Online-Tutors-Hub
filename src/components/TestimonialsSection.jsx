@@ -7,7 +7,7 @@ const testimonials = [
     name: "Samantha K.",
     role: "Nursing Student, U.S.",
     feedback:
-      "Online Tutors Hub saved my semester. I was falling behind in my online classes and they stepped in with expert help and timely updates. Highly recommend!",
+      "Smartwave Tutors Hub saved my semester. I was falling behind in my online classes and they stepped in with expert help and timely updates. Highly recommend!",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
   },
@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
           What Our Clients Say
         </motion.h2>
         <p className="mt-2 text-gray-500">
-          Real feedback from learners who’ve trusted Online Tutors Hub with
+          Real feedback from learners who’ve trusted Smartwave Tutors Hub with
           their success.
         </p>
       </div>
