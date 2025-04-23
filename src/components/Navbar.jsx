@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../assets/icons/tutor.png";
+import logo from "../assets/icons/Smartwave Tutors Hub.png";
 import { desktopMenus, mobileLinks } from "../constants";
 
 const Navbar = () => {
@@ -21,11 +21,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#ffffff] shadow-md fixed w-full h-20 top-0 z-50">
+    <nav className="bg-[#ffffff] shadow-md fixed w-full h-20 top-0 z-50 border-2 flex">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-4xl font-bold text-[#0c5192]">
-          <img src={logo} alt="Online Tutors Hub Logo" className="h-16" />
+          <img
+            src={logo}
+            alt="Smartwave Tutors Hub Hub Logo"
+            className="h-24 w-full"
+          /> 
         </Link>
 
         {/* Desktop Navigation */}

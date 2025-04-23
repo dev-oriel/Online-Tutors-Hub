@@ -4,33 +4,30 @@ import {
   FaLaptopCode,
   FaClock,
   FaCertificate,
+  FaChalkboardTeacher,
+  FaGlobe,
+  FaBookOpen,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const features = [
   {
-    icon: <FaUserGraduate size={36} className="text-[#ffd816]" />,
-    title: "Learn at Your Pace",
+    icon: <FaChalkboardTeacher size={36} className="text-[#ffd816]" />,
+    title: "Qualified Experts",
     description:
-      "Our flexible platform lets you study anytime, anywhere — at your own speed.",
+      "Our team consists of subject-matter experts with years of experience helping students excel in exams, classes, and academic projects.",
   },
   {
-    icon: <FaLaptopCode size={36} className="text-[#ffd816]" />,
-    title: "Interactive Learning",
+    icon: <FaGlobe size={36} className="text-[#ffd816]" />,
+    title: "Available 24/7",
     description:
-      "Engage with rich content, coding exercises, live sessions, and instant feedback.",
+      "We offer round-the-clock support to students across the globe. No matter your time zone, we’re here whenever you need us.",
   },
   {
-    icon: <FaClock size={36} className="text-[#ffd816]" />,
-    title: "24/7 Access",
+    icon: <FaBookOpen size={36} className="text-[#ffd816]" />,
+    title: "Guaranteed Results",
     description:
-      "Access lessons and resources around the clock. Learning never sleeps.",
-  },
-  {
-    icon: <FaCertificate size={36} className="text-[#ffd816]" />,
-    title: "Certified Excellence",
-    description:
-      "Receive verifiable certificates to boost your resume and professional credibility.",
+      "We stand by our promise of academic success, offering guaranteed grades, confidentiality, and progressive payments for your peace of mind.",
   },
 ];
 
@@ -44,17 +41,17 @@ const FeaturesSection = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold text-[#0c5192] mb-6"
         >
-          Platform Features
+          Why Choose Us
         </motion.h2>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
           Explore the powerful features that make{" "}
-          <span className="text-[#0c5192] font-semibold">
-            Online Tutors Hub
+          <span className="text-[#ffd816] font-semibold">
+            Smartwave Tutors Hub
           </span>{" "}
           your ideal learning companion.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}

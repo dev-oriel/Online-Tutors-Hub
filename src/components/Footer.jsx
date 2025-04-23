@@ -8,11 +8,11 @@ const Footer = () => {
         {/* Logo & Description */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">
-            Online Tutors Hub
+            Smartwave Tutors Hub
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed">
             Personalized academic support that delivers results — anywhere,
-            anytime. Join thousands of students excelling with Online Tutors
+            anytime. Join thousands of students excelling with Smartwave Tutors
             Hub.
           </p>
         </div>
@@ -103,7 +103,7 @@ const Footer = () => {
             Connect With Us
           </h3>
           <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
-            <Mail className="w-4 h-4" /> support@onlinetutorshub.com
+            <Mail className="w-4 h-4" /> support@Smartwavetutorshub.com
           </p>
           <div className="flex space-x-4 mt-2">
             <a
@@ -136,7 +136,7 @@ const Footer = () => {
 
       {/* Divider */}
       <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Online Tutors Hub. All Rights Reserved.
+        © {new Date().getFullYear()} Smartwave Tutors Hub. All Rights Reserved.
       </div>
     </footer>
   );
