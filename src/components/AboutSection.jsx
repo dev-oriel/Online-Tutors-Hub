@@ -13,11 +13,11 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-[#0c5192] mb-6"
+          className="text-4xl font-extrabold text-[#0c5192] mb-6"
         >
           About Us
         </motion.h2>
-        <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+        <p className="text-gray-600  text-lg max-w-3xl mx-auto mb-12">
           Discover how Smartwave Tutors Hub supports students around the world
           with expert-led, personalized academic services.
         </p>
@@ -26,7 +26,7 @@ const AboutSection = () => {
       {/* Block 1: About Us */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12 mb-20">
         <div>
-          <h3 className="text-2xl font-semibold text-[#0c5192] mb-4">
+          <h3 className="text-2xl font-bold text-[#0c5192] mb-4">
             Begin Your Academic Success Story with Smartwave Tutors Hub
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
@@ -64,7 +64,7 @@ const AboutSection = () => {
           />
         </div>
         <div>
-          <h3 className="text-2xl font-semibold text-[#0c5192] mb-4">
+          <h3 className="text-2xl font-bold text-[#0c5192] mb-4">
             What We Offer
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
@@ -80,7 +80,7 @@ const AboutSection = () => {
       {/* Block 3: How Should I Place an Order? */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12">
         <div>
-          <h3 className="text-2xl font-semibold text-[#0c5192] mb-4">
+          <h3 className="text-2xl font-bold text-[#0c5192] mb-4">
             How Should I Place an Order?
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">

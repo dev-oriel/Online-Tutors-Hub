@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-20">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
-          What Our Students Say
+          What Our Clients Say
         </h2>
         <p className="mt-2 text-gray-500">
           Real feedback from learners who’ve trusted Online Tutors Hub with

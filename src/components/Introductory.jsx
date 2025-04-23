@@ -5,7 +5,7 @@ const Introductory = () => {
     <section className="bg-white py-16 px-4 sm:px-10 lg:px-20 text-gray-800">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-[#0c5192] mb-4">
+          <h2 className="text-4xl font-extrabold leading-tight text-[#0c5192] mb-4">
             Trusted Online Class & Exam Help Services
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">

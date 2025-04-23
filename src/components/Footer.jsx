@@ -24,7 +24,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 About Us
               </a>
@@ -32,7 +32,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 Services
               </a>
@@ -40,7 +40,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 Contact
               </a>
@@ -48,7 +48,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 FAQs
               </a>
@@ -65,7 +65,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 Online Class Help
               </a>
@@ -73,7 +73,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 Exam Assistance
               </a>
@@ -81,7 +81,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 Assignment Help
               </a>
@@ -89,7 +89,7 @@ const Footer = () => {
             <li>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+                className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
               >
                 Essay Writing
               </a>
@@ -108,25 +108,25 @@ const Footer = () => {
           <div className="flex space-x-4 mt-2">
             <a
               href="#"
-              className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-white visited:text-gray-400 no-underline transition-colors duration-200"
+              className="text-gray-400 hover:text-[#ffd816] visited:text-gray-400 no-underline transition-colors duration-200"
             >
               <Linkedin className="w-5 h-5" />
             </a>

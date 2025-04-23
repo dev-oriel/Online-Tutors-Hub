@@ -5,17 +5,14 @@ body {
   @apply bg-gray-100 text-gray-900;
 }
 
-/* Custom Link Styles */
+/* Custom Link Styles
 a {
   @apply font-medium text-blue-600 hover:text-blue-800;
 }
-
-/* Button Styles */
+*/
+/* Button Styles 
 button {
   @apply bg-blue-600 text-white font-medium py-2 px-4 rounded-lg shadow-md transition hover:bg-blue-700;
 }
+*/
 
-a {
-  text-decoration: none !important;
-  color: inherit !important;
-}

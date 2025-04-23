@@ -21,19 +21,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#ffffff] shadow-md fixed w-full h-20 top-0 z-50 border-2 flex">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav className="bg-white shadow-md fixed w-full h-20 top-0 z-50 border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center w-full">
         {/* Logo */}
-        <Link to="/" className="text-4xl font-bold text-[#0c5192]">
-          <img
-            src={logo}
-            alt="Smartwave Tutors Hub Hub Logo"
-            className="h-24 w-full"
-          /> 
-        </Link>
+        <div className="flex-none">
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src={logo}
+              alt="Smartwave Tutors Hub Logo"
+              className="h-12 sm:h-14 w-auto object-contain transition-all duration-300 hover:scale-105"
+            />
+            <span className="text-xl sm:text-2xl font-extrabold tracking-wide text-[#0c5192]">
+              Smartwave
+              <span className="block text-xl font-semibold text-[#ffd816] -mt-1 tracking-tight">
+                Tutors Hub
+              </span>
+            </span>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 font-medium relative w-full justify-center">
+        <div className="hidden md:flex items-center space-x-6 font-medium flex-1 justify-center">
           {desktopMenus.map((menu) => (
             <div
               key={menu.key}
@@ -41,19 +49,18 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter(menu.key)}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="text-[#0c5192] hover:text-[#ffd816] font-semibold">
+              <button className="bg-transparent text-[#0c5192] hover:text-[#ffd816] font-semibold px-2 py-1 focus:outline-none focus:ring-0 focus:bg-transparent active:bg-transparent hover:bg-transparent">
                 {menu.label} ▼
               </button>
 
               {dropdown === menu.key && (
-                // Centered dropdown (relative to entire navbar)
                 <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white shadow-xl border border-gray-200 z-50 w-[1100px] p-8 rounded-lg">
                   <div className="grid grid-cols-4 gap-6">
                     {menu.links.map((link, idx) => (
                       <Link
                         key={idx}
                         to={link.to}
-                        className="text-sm text-gray-700 hover:text-[#0c5192] border-b border-dotted border-gray-300 py-1"
+                        className="text-sm text-gray-700 hover:text-[#ffd816] border-b border-dotted border-gray-300 py-1"
                       >
                         {link.text}
                       </Link>
@@ -65,16 +72,18 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#0c5192]"
-        >
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
+        {/* Mobile Toggle */}
+        <div className="flex-none md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-[#0c5192] focus:outline-none"
+          >
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu Content */}
+      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md py-4 flex flex-col items-center space-y-4 z-40">
           {mobileLinks.map((link, idx) => (
