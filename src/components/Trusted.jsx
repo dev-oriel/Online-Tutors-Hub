@@ -10,7 +10,7 @@ import purdue from "../assets/logos/purdue-global.jpg";
 import strayer from "../assets/logos/strayer.png";
 import chamberlain from "../assets/logos/chamberlain.png";
 import ncu from "../assets/logos/ncu.png";
-import coursera from "../assets/logos/coursera.png";
+import coursera from "../assets/logos/Coursera.png";
 import asu from "../assets/logos/asu.png";
 import embryRiddle from "../assets/logos/embry-riddle.jpg";
 import keiser from "../assets/logos/keiser.jpg";
