@@ -40,7 +40,6 @@ const AboutSection = () => {
               managing heavy assignments, our expert tutors are by your side
               every step of the way.
               <br />
-              <br />
               We believe in more than just tutoring — we provide personalized
               guidance that empowers you to take charge of your education with
               confidence. Our mission is simple: deliver dependable,
@@ -78,8 +77,6 @@ const AboutSection = () => {
             </p>
           </div>
         </div>
-
-        {/* Block 3 */}
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12">
           <div>
             <h3 className="text-2xl sm:text-3xl font-semibold text-[#0c5192] mb-4">
