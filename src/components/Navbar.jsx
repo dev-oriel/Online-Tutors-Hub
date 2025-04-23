@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/icons/Smartwave Tutors Hub.png";
@@ -7,38 +7,53 @@ import { desktopMenus, mobileLinks } from "../constants";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const timeoutRef = useRef(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleMouseEnter = (key) => {
-    clearTimeout(timeoutRef.current);
-    setDropdown(key);
+    if (!isMobile) {
+      clearTimeout(timeoutRef.current);
+      setDropdown(key);
+    }
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setDropdown(null);
-    }, 150);
+    if (!isMobile) {
+      timeoutRef.current = setTimeout(() => setDropdown(null), 150);
+    }
+  };
+
+  const handleDropdownClick = (key) => {
+    if (isMobile) {
+      setDropdown(dropdown === key ? null : key);
+    }
   };
 
   return (
     <nav className="bg-white shadow-md fixed w-full h-20 top-0 z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center w-full justify-between">
         {/* Logo */}
-        <div className="flex-none">
-          <Link to="/" className="flex items-center space-x-3">
-            <img
-              src={logo}
-              alt="Smartwave Tutors Hub Logo"
-              className="h-12 sm:h-14 w-auto object-contain transition-all duration-300 hover:scale-105"
-            />
-            <span className="text-xl sm:text-2xl font-extrabold tracking-wide text-[#0c5192]">
-              Smartwave
-              <span className="block text-xl font-semibold text-[#ffd816] -mt-1 tracking-tight">
-                Tutors Hub
-              </span>
+        <Link to="/" className="flex items-center space-x-3">
+          <img
+            src={logo}
+            alt="Smartwave Tutors Hub Logo"
+            className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 hover:scale-105"
+          />
+          <span className="text-lg sm:text-2xl font-extrabold tracking-wide text-[#0c5192] leading-tight">
+            Smartwave
+            <span className="block text-base sm:text-xl font-semibold text-[#ffd816] -mt-1 tracking-tight">
+              Tutors Hub
             </span>
-          </Link>
-        </div>
+          </span>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6 font-medium flex-1 justify-center">
@@ -49,13 +64,13 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter(menu.key)}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="bg-transparent text-[#0c5192] hover:text-[#ffd816] font-semibold px-2 py-1 focus:outline-none focus:ring-0 focus:bg-transparent active:bg-transparent hover:bg-transparent">
+              <button className="bg-transparent text-[#0c5192] hover:text-[#ffd816] font-semibold px-2 py-1">
                 {menu.label} ▼
               </button>
 
               {dropdown === menu.key && (
-                <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white shadow-xl border border-gray-200 z-50 w-[1100px] p-8 rounded-lg">
-                  <div className="grid grid-cols-4 gap-6">
+                <div className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-white shadow-xl border border-gray-200 z-50 w-[800px] max-w-[95vw] p-6 rounded-lg">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {menu.links.map((link, idx) => (
                       <Link
                         key={idx}
@@ -73,7 +88,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex-none md:hidden">
+        <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-[#0c5192] focus:outline-none"
@@ -85,12 +100,38 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md py-4 flex flex-col items-center space-y-4 z-40">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md py-4 px-6 z-40">
+          {desktopMenus.map((menu) => (
+            <div key={menu.key} className="mb-3">
+              <button
+                onClick={() => handleDropdownClick(menu.key)}
+                className="w-full text-left text-[#0c5192] font-semibold py-2 hover:text-[#ffd816]"
+              >
+                {menu.label}
+              </button>
+              {dropdown === menu.key && (
+                <div className="pl-4 flex flex-col space-y-2 mt-2">
+                  {menu.links.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      to={link.to}
+                      className="text-sm text-gray-700 hover:text-[#ffd816]"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.text}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* Extra mobile links */}
           {mobileLinks.map((link, idx) => (
             <Link
               key={idx}
               to={link.to}
-              className="text-[#0c5192] hover:text-[#ffd816]"
+              className="text-[#0c5192] font-semibold block py-2 hover:text-[#ffd816]"
               onClick={() => setIsOpen(false)}
             >
               {link.text}
