@@ -83,19 +83,28 @@ const Footer = () => {
           </h3>
           <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
             <Mail className="w-4 h-4 text-[#ffd816]" />
-            support@Smartwavetutorshub.com
+            smartwavetutorshub@gmail.com
           </p>
           <div className="flex space-x-4 mt-2">
             <a href="#" className="text-[#1877F2] hover:text-[#ffd816]">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="text-[#1DA1F2] hover:text-[#ffd816]">
+            <a
+              href="https://x.com/SmartwaveTutors?t=GjqWA2NIlBGiVK3QFl6JoA&s=09"
+              className="text-[#1DA1F2] hover:text-[#ffd816]"
+            >
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="text-[#E1306C] hover:text-[#ffd816]">
+            <a
+              href="https://www.instagram.com/smartwavetutorshub?igsh=MXgwOWhheXZuMzJidA=="
+              className="text-[#E1306C] hover:text-[#ffd816]"
+            >
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-[#0A66C2] hover:text-[#ffd816]">
+            <a
+              href="https://www.linkedin.com/in/smartwavetutorshub/"
+              className="text-[#0A66C2] hover:text-[#ffd816]"
+            >
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
