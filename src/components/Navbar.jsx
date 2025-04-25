@@ -1,15 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import logo from "../assets/icons/Smartwave Tutors Hub.png";
 import { desktopMenus } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false); // Track loading state
   const [dropdown, setDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const timeoutRef = useRef(null);
   const navRef = useRef(null);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,6 +31,20 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleLinkClick = (to) => {
+    // Close the menu first
+    setIsOpen(false);
+
+    // Start the spinner
+    setLoading(true);
+
+    // Simulate a short delay for spinner (adjust as needed)
+    setTimeout(() => {
+      navigate(to); // Navigate after spinner
+      setLoading(false); // Stop spinner
+    }, 500); // Adjust delay time to control spinner duration
+  };
 
   const handleMouseEnter = (key) => {
     if (!isMobile) {
@@ -93,6 +109,7 @@ const Navbar = () => {
                         key={idx}
                         to={link.to}
                         className="text-sm text-gray-700 hover:text-[#ffd816] border-b border-dotted border-gray-300 py-1"
+                        onClick={() => handleLinkClick(link.to)} // Close menu and start loading
                       >
                         {link.text}
                       </Link>
@@ -136,10 +153,7 @@ const Navbar = () => {
                       key={idx}
                       to={link.to}
                       className="text-sm text-gray-700 hover:text-[#ffd816]"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setDropdown(null);
-                      }}
+                      onClick={() => handleLinkClick(link.to)} // Close menu and start loading
                     >
                       {link.text}
                     </Link>
@@ -148,6 +162,13 @@ const Navbar = () => {
               )}
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Spinner for loading */}
+      {loading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="spinner"></div> {/* Custom spinner component */}
         </div>
       )}
     </nav>
