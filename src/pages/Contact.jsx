@@ -1,10 +1,26 @@
 import React from "react";
+import { Helmet } from "react-helmet"; // 👈 for SEO meta tags
 import { Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import PageWrapper from "../components/PageWrapper"; // Assuming PageWrapper is in the same directory
+import PageWrapper from "../components/PageWrapper";
 
 const Contact = () => {
   return (
     <PageWrapper>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Contact Us | Smartwave Tutors Hub</title>
+        <meta
+          name="description"
+          content="Get in touch with Smartwave Tutors Hub for any inquiries or support. Reach out via email, social media, or live chat and we'll respond promptly."
+        />
+        <meta
+          name="keywords"
+          content="Contact Smartwave Tutors, Tutoring Help, Online Tutoring Support, Smartwave Tutors Hub Contact"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://smartwavetutorshub.com/contact" />
+      </Helmet>
+
       <section className="bg-gradient-to-b from-white to-[#f9f9f9] py-20 px-4 sm:px-8 lg:px-16">
         {/* Section Header */}
         <div className="max-w-6xl mx-auto text-center mb-16">

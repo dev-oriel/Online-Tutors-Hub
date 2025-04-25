@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet"; // 👈 Add for SEO
 import { CheckCircle2 } from "lucide-react";
 import CallToActionButton from "../components/CallToActionButton";
 import PageWrapper from "../components/PageWrapper";
@@ -40,6 +41,24 @@ const ListItem = ({ text }) => (
 const OnlineClass = () => {
   return (
     <PageWrapper>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Online Class Help | Smartwave Tutors Hub</title>
+        <meta
+          name="description"
+          content="Struggling with online classes? Smartwave Tutors Hub offers expert assistance in online class completion, weekly assignments, urgent deadlines, and subject-specific tutoring."
+        />
+        <meta
+          name="keywords"
+          content="Online Class Help, Smartwave Tutors Hub, Assignment Help, Math Tutoring, Science Support, Online Coursework"
+        />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href="https://smartwavetutorshub.com/online-class"
+        />
+      </Helmet>
+
       <section className="bg-white text-gray-900 py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Intro */}
@@ -109,13 +128,9 @@ const OnlineClass = () => {
 
           {/* Call to Action */}
           <div className="text-center space-y-6">
-            <h2 className="text-2xl font-semibold text-gray-800">
-              Ready to Get Started?
+            <h2 className="text-2xl font-semibold text-[#0A66C2]">
+              Ready to Get Help with Your Class?
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Don’t let online classes overwhelm you. Book a free consultation
-              to explore how we can support your academic journey.
-            </p>
             <CallToActionButton />
           </div>
         </div>
