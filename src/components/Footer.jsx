@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 // Import local icons
 import AmericanExpress from "../assets/icons/American-Express.png";
@@ -15,6 +16,13 @@ const paymentIcons = [
 ];
 
 const Footer = () => {
+  const location = useLocation();
+
+  // Scroll to the top whenever the route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <footer className="bg-gray-900 text-white px-6 pt-16 pb-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
@@ -53,51 +61,50 @@ const Footer = () => {
         </div>
 
         {/* Services */}
-        {/* Services */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">
             Our Services
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a
-                href="/online-class"
+              <Link
+                to="/online-class"
                 className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
               >
                 Complete Online Class
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/assignment-help"
+              <Link
+                to="/assignment-help"
                 className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
               >
                 Assignment Help
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/exam-help"
+              <Link
+                to="/exam-help"
                 className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
               >
                 Exams Help
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/math-class-help"
+              <Link
+                to="/math-class-help"
                 className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
               >
                 Math Class Help
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/take-my-class"
+              <Link
+                to="/take-my-class"
                 className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
               >
                 Take My Online Class
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
