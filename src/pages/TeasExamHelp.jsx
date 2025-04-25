@@ -1,6 +1,6 @@
 import React from "react";
-import CallToActionButton from "../components/CallToActionButton"; // Reuse your CTA Button
-import PageWrapper from "../components/PageWrapper"; // Reuse your Page Wrapper
+import CallToActionButton from "../components/CallToActionButton";
+import PageWrapper from "../components/PageWrapper";
 
 const services = [
   "Comprehensive support for TEAS exam preparation",
