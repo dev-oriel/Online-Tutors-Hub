@@ -53,26 +53,52 @@ const Footer = () => {
         </div>
 
         {/* Services */}
+        {/* Services */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">
             Our Services
           </h3>
           <ul className="space-y-2 text-sm">
-            {[
-              "Online Class Help",
-              "Exam Assistance",
-              "Assignment Help",
-              "Essay Writing",
-            ].map((item, index) => (
-              <li key={index}>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a
+                href="/online-class"
+                className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
+              >
+                Complete Online Class
+              </a>
+            </li>
+            <li>
+              <a
+                href="/assignment-help"
+                className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
+              >
+                Assignment Help
+              </a>
+            </li>
+            <li>
+              <a
+                href="/exam-help"
+                className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
+              >
+                Exams Help
+              </a>
+            </li>
+            <li>
+              <a
+                href="/math-class-help"
+                className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
+              >
+                Math Class Help
+              </a>
+            </li>
+            <li>
+              <a
+                href="/take-my-class"
+                className="text-gray-400 hover:text-[#ffd816] transition-colors duration-200"
+              >
+                Take My Online Class
+              </a>
+            </li>
           </ul>
         </div>
 

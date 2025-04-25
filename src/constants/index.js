@@ -15,6 +15,9 @@ export const desktopMenus = [
       { to: "/biology-class-help", text: "Biology Class Help" },
       { to: "/math-class-help", text: "Math Class Help" },
       { to: "/exam-help", text: "Exams Help" },
+      { to: "/finance-class-help", text: "Finance Online Class Help" },
+      { to: "/marketing-class-help", text: "Marketing Online Class Help" },
+      { to: "/physics-class-help", text: "Physics Class Help" },
     ],
   },
   {
@@ -22,10 +25,8 @@ export const desktopMenus = [
     key: "exams",
     links: [
       { to: "/online-exams", text: "Online Exams" },
-      { to: "/finance-class-help", text: "Finance Online Class Help" },
-      { to: "/marketing-class-help", text: "Marketing Online Class Help" },
-      { to: "/physics-class-help", text: "Physics Class Help" },
       { to: "/teas-exam-help", text: "Teas Exam Help" },
+      { to: "/proctored-exams", text: "Proctored Exams" },
     ],
   },
   {
@@ -42,7 +43,7 @@ export const desktopMenus = [
     key: "blog",
     links: [
       { to: "/pay-for-online-class", text: "PayForOnlineClass" },
-      { to: "/proctored-exams", text: "Proctored Exams" },
+
       { to: "/take-my-class-reviews", text: "Take My Online Class Reviews" },
     ],
   },
