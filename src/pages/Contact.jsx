@@ -1,12 +1,19 @@
 import React from "react";
-import { Helmet } from "react-helmet"; // 👈 for SEO meta tags
-import { Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Helmet } from "react-helmet";
+import {
+  Mail,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  MessageCircle,
+} from "lucide-react";
+import { SiSnapchat } from "react-icons/si";
 import PageWrapper from "../components/PageWrapper";
 
 const Contact = () => {
   return (
     <PageWrapper>
-      {/* SEO Meta Tags */}
       <Helmet>
         <title>Contact Us | Smartwave Tutors Hub</title>
         <meta
@@ -22,7 +29,6 @@ const Contact = () => {
       </Helmet>
 
       <section className="bg-gradient-to-b from-white to-[#f9f9f9] py-20 px-4 sm:px-8 lg:px-16">
-        {/* Section Header */}
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-[#0c5192] mb-4 tracking-tight">
             Get in Touch
@@ -33,7 +39,6 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Info & Form */}
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           {/* Contact Info */}
           <div>
@@ -50,13 +55,24 @@ const Contact = () => {
                   smartwavetutorshub@gmail.com
                 </a>
               </p>
+              <p className="text-gray-700 text-lg mt-4">
+                Or send us a WhatsApp:{" "}
+                <a
+                  href="https://wa.me/254743442443"
+                  className="text-[#ffd816] font-medium hover:text-[#0c5192] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +254 743 442443
+                </a>
+              </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-semibold text-[#0c5192] mb-4">
                 Follow Us
               </h3>
-              <div className="flex space-x-4 mt-4">
+              <div className="flex flex-wrap gap-4 mt-4">
                 {[
                   {
                     href: "https://www.facebook.com/SmartwaveTutorsHub",
@@ -73,6 +89,14 @@ const Contact = () => {
                   {
                     href: "https://www.linkedin.com/in/smartwavetutorshub/",
                     icon: <Linkedin />,
+                  },
+                  {
+                    href: "https://www.snapchat.com/add/smartwavetutors",
+                    icon: <SiSnapchat size={20} />,
+                  },
+                  {
+                    href: "https://wa.me/254743442443",
+                    icon: <MessageCircle />, // WhatsApp icon
                   },
                 ].map((social, idx) => (
                   <a
