@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import { delayedLazy } from "./utils/delayedLazy";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 // Lazy load with artificial delay
 const Home = delayedLazy(() => import("./pages/Home"));
@@ -108,7 +109,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-
+        <WhatsAppButton />
         <Footer />
       </div>
     </Suspense>
