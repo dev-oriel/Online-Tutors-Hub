@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { FaWhatsapp, FaSnapchatGhost } from "react-icons/fa";
 
-// Import local icons
+// Payment Icons
 import AmericanExpress from "../assets/icons/American-Express.png";
 import Mastercard from "../assets/icons/mastercard.png";
 import PayPal from "../assets/icons/paypal.png";
@@ -18,7 +19,6 @@ const paymentIcons = [
 const Footer = () => {
   const location = useLocation();
 
-  // Scroll to the top whenever the route changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white px-6 pt-16 pb-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        {/* Logo & Description */}
+        {/* Brand Info */}
         <div>
           <h2 className="text-2xl font-bold mb-4">Smartwave Tutors Hub</h2>
           <p className="text-gray-400 text-sm leading-relaxed">
@@ -36,7 +36,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Payment Security */}
+        {/* Payment Methods */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">
             100% Safe & Secure Payments
@@ -109,7 +109,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact & Social */}
+        {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">
             Connect With Us
@@ -117,6 +117,17 @@ const Footer = () => {
           <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
             <Mail className="w-4 h-4 text-[#ffd816]" />
             smartwavetutorshub@gmail.com
+          </p>
+          <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
+            <FaWhatsapp className="w-4 h-4 text-[#25D366]" />
+            <a
+              href="https://wa.me/17738122947"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#ffd816] transition-colors duration-200"
+            >
+              +1 773-812-2947
+            </a>
           </p>
           <div className="flex space-x-4 mt-2">
             <a href="#" className="text-[#1877F2] hover:text-[#ffd816]">
@@ -140,11 +151,17 @@ const Footer = () => {
             >
               <Linkedin className="w-5 h-5" />
             </a>
+            <a
+              href="https://www.snapchat.com/add/smartwavetutors"
+              className="text-yellow-400 hover:text-[#ffd816]"
+            >
+              <FaSnapchatGhost className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Divider */}
+      {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Smartwave Tutors Hub. All Rights Reserved.
       </div>

@@ -19,7 +19,7 @@ const WhatsAppButton = () => {
     };
 
     showTextTemporarily(); // initial show
-    const interval = setInterval(showTextTemporarily, 1800000); // every 30 mins
+    const interval = setInterval(showTextTemporarily, 600000 ); // every 10 mins
 
     return () => clearInterval(interval);
   }, [show]);
