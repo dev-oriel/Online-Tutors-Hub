@@ -54,22 +54,50 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/src/styles.css" />
+
+    <!-- Structured Data for Organization and Social Profiles -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Smartwave Tutors Hub",
+        "url": "https://onlinetutorshub.com",
+        "logo": "https://onlinetutorshub.com/FAVICON.png",
+        "email": "smartwavetutorshub@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Downtown",
+          "addressLocality": "Chicago",
+          "addressRegion": "IL",
+          "postalCode": "60601",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.facebook.com/smartwavetutors",
+          "https://x.com/SmartwaveTutors?t=GjqWA2NIlBGiVK3QFl6JoA&s=09",
+          "https://www.instagram.com/smartwavetutorshub?igsh=MXgwOWhheXZuMzJidA==",
+          "https://www.linkedin.com/in/smartwavetutorshub/",
+          "https://www.snapchat.com/add/smartwavetutors",
+          "https://wa.me/17738122947"
+        ]
+      }
+    </script>
+
+    <!-- Tawk.to Live Chat Script -->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/5e5954f5a89cda5a188884aa/default";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
   </head>
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/5e5954f5a89cda5a188884aa/default";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
